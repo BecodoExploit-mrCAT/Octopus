@@ -1,0 +1,1 @@
+smtp-user-enum -U /usr/share/wordlists/names.txt -t $TARGET -m 150
