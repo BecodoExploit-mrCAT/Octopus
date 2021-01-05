@@ -1,3 +1,0 @@
-nc -v $TARGET 80
-telnet $TARGET 80
-curl -vX $TARGET
