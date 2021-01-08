@@ -3,248 +3,244 @@
 
 ## **Linux Network Commands**	
 
-### Network connections
+#### Network connections
 ```
 watch ss -tp 	
 ```
 
-### Tcp connections -anu=udp 
+#### Tcp connections -anu=udp 
 ```
 netstat -ant 	
 ```
 
-### Connections with PIDs 
+#### Connections with PIDs 
 ```
 netstat -tulpn 	
 ```
 
-### Established connections
+#### Established connections
 ```
 lsof -i 	
 ```
 
-### Access windows smb share 
+#### Access windows smb share 
 ```
 smb://<ip>/share 	
 ```
 
-### Mount Windows share 
+#### Mount Windows share 
 ```
 share user x.x.x.x c$ 	
 ```
 
-### SMB connect 
+#### SMB connect 
 ```
 smbclient -0 user\\\\<ip>\\<share> 	
 ```
 
-### Set IP and netmask 
+#### Set IP and netmask 
 ```
 ifconfig eth# <ip>/<cidr> 	
 ```
 
-### Set virtual interface 
+#### Set virtual interface 
 ```
 ifconfig eth0:1 <ip>/<cidr> 	
 ```
 
-### Set GW 
+#### Set GW 
 ```
 route add default gw <gw_ip> 	
 ```
 
-### Change MTU size 
+#### Change MTU size 
 ```
 ifconfig eth# mtu [size]
 ```
 	
-### Change MAC 
+#### Change MAC 
 ```
 export MAC=XX:XX:XX:XX:XX:XX 	
 ```
 
-### Change MAC 
+#### Change MAC 
 ```
 ifconfig <int> hw ether <MAC> 	
 ```
 
-### Backtrack MAC changer 
+#### Backtrack MAC changer 
 ```
 macchanger -m <MAC> <int> 	
 ```
 
-### Built-in wifi scanner 
+#### Built-in wifi scanner 
 ```
 iwlist <int> scan 	
 ```
 
-### Domain lookup for IP 
+#### Domain lookup for IP 
 ```
 dig -x <ip>
 ```
 
- 	
-### Domain lookup for IP 
+#### Domain lookup for IP 
 ```
 host <ip>	 
 ```
 
-### Domain SRV lookup 
+#### Domain SRV lookup 
 ```
 host -t SRV_<service>_tcp.url.com 	 
 ```
  	
-### DNS Zone Xfer 
+#### DNS Zone Xfer 
 ```
 dig @<ip> domain -t AXFR 	 
 ```
  	
-### DNS Zone Xfer 
+#### DNS Zone Xfer 
 ```
 host -l <domain> <namesvr> 	 
 ```
  	
-### Print existing VPN keys 
+#### Print existing VPN keys 
 ```
 ip xfrm state list 	 
 ```
  	
-### Adds 'hidden' interface 
+#### Adds 'hidden' interface 
 ```
 ip addr add <ip>/<cidr> dev eth0	 
 ```
  	
-### List DHCP assignments 
+#### List DHCP assignments 
 ```
 /var/log/messages | grep DHCP 	 
 ```
  	
-### Block ip:port 
+#### Block ip:port 
 ```
 tcpkill host<ip> and port<port> 	 
 ```
  	
-### Turn on IP Forwarding 
+#### Turn on IP Forwarding 
 ```
 echo "1" > /proc/sys/net/ipv4/ip_forward 	 
 ```
  	
-### Add DNS Serve
+#### Add DNS Server
 ```
 echo "nameserver x.x.x.x" >> /etc/resolv.conf	
-```
-
-
-
-
+```  
+  
 ## **LINUX SYSTEM INFO** 	
 
-### Get hostname for <ip> 
+#### Get hostname for <ip> 
 ```
 nbtstat -A <ip>	
 ```
 
-### Current username 
+#### Current username 
 ```
 id  
 ```
 
-### Logged on users 
+#### Logged on users 
 ```
 w  
 ```
 
-### User information 
+#### User information 
 ``` 
 who -a   
 ```	
 
-### Last users logged on  
+#### Last users logged on  
 ```
 last -a  
 ``` 	
 
-### Process listing (top)  
+#### Process listing (top)  
 ```
 ps -ef   
 ```	
 
-### Disk usage (free)  
+#### Disk usage (free)  
 ```
 df -h   
 ```	
 
-### Kernel version/CPU info  
+#### Kernel version/CPU info  
 ```
 uname -a   
 ```	
 
-### Mounted file Systems  
+#### Mounted file Systems  
 ```
 mount   
 ```	
 
-### Show list of users  
+#### Show list of users  
 ```
 getent passwd 	  
 ```
 
-### Add to PATH variable  
+#### Add to PATH variable  
 ```
 PATH=$PATH:/home/mypath   
 ```	
 
-### Kills process with <pid>  
+#### Kills process with <pid>  
 ```
 kill <pid>  
 ```	
 
-### Show OS info  
+#### Show OS info  
 ```
 cat /etc/issue 	  
 ```
 
-### Show OS version info  
+#### Show OS version info  
 ```
 cat /etc/*release*  
 ```	
 
-### Show kernel info  
+#### Show kernel info  
 ```
 cat /proc/version   
 ```	
 
-### Installed pkgs (Redhat)  
+#### Installed pkgs (Redhat)  
 ```
 rpm --query -all   
 ```	
 
-### Install RPM (-e=remove)  
+#### Install RPM (-e=remove)  
 ```
 rpm -ivh *.rpm 	  
 ```
 
-### Installed pkgs (Ubuntu)  
+#### Installed pkgs (Ubuntu)  
 ```
 dpkg -get-selections 	  
 ```
 
-### Install DEB (-r=remove)   
+#### Install DEB (-r=remove)   
 ```
 dpkg -I *.deb 	  
 ```
 
-### Installed pkgs (Solaris)  
+#### Installed pkgs (Solaris)  
 ```
 pkginfo   
 ```	
 
-### Show location of executable  
+#### Show location of executable  
 ```
 which <tscsh/csh/ksh/bash>  
 ```
 
-### Disable <shell>, force bash 
+#### Disable <shell>, force bash 
 ```
 chmod 750 <tcsh/csh/ksh>  
 ```	
@@ -254,464 +250,465 @@ chmod 750 <tcsh/csh/ksh>
 
 ## **Linux Utility Commands**
 
-### Grab url 
+#### Grab url 
 ```
-wget http://<url>-0 url.txt -o /dev/null 
+wget http://<url> -O url.txt -o /dev/null 
 ```	
 
-### Remote Desktop to <ip> 
+#### Remote Desktop to <ip> 
 ```
 rdesktop ip 	
 ```	
 
-### Put file 
+#### Put file 
 ```
 scp /tmp/file user@x.x.x.x:/tmp/file	
 ``` 	
 
-### Get file 
+#### Get file 
 ```
 scp user@ remoteip :/tmp/file /tmp/file	
 ``` 	
 
-### Add user 
+#### Add user 
 ```
 useradd -m <user>	
 ``` 	
 
-### Change user password 
+#### Change user password 
 ```
 passwd <user>	
 ``` 	
 
-### Remove user 
+#### Remove user 
 ```
 rmuser uname	
 ``` 	
 
-### Record shell : Ctrl-D stops 
+#### Record shell : Ctrl-D stops 
 ```
 script -a <outfile>	
 ``` 	
 
-### Find related command 
+#### Find related command 
 ```
 apropos <subject>	
 ``` 	
 
-### View users command history 
+#### View users command history 
 ```
 history 	
 ```	
 
-### Executes line # in history 
+#### Executes line # in history 
 ```
 ! <num>	
-```	
-
-
-
-
+```  
+  
+  
+  
+  
 ## **Linux File Commands**
 
-### Compare files 
+#### Compare files 
 ```
 diff filel file2 	
 ```	
 
-### Force delete of <dir> 
+#### Force delete of <dir> 
 ```
 rm -rf <dir> 	
 ```	
 
-### Overwrite/delete file 
+#### Overwrite/delete file 
 ```
 shred -f -u <file> 	
 ```	
 
-### Matches ref_ file timestamp 
+#### Matches ref_ file timestamp 
 ```
 touch -r <ref_file> <file> 	
 ```	
 
-### Set file timestamp 
+#### Set file timestamp 
 ```
 touch -t YYYYMMDDHHSS <file>	
 ``` 	
 
-### List connected drives
+#### List connected drives
 ```
 sudo fdisk -l 		
 ```
 
-### Mount USB key 
+#### Mount USB key 
 ```
 mount /dev/sda# /mnt/usbkey 	
 ```	
 
-### Compute md5 hash 
+#### Compute md5 hash 
 ```
 md5sum -t file 		
 ```
 
-### Generate md5 hash 
+#### Generate md5 hash 
 ```
 echo -n "str" | md5sum 	
 ```	
 
-### SHAl hash of file 
+#### SHAl hash of file 
 ```
 shalsum file 	
 ```	
 
-### Sort/show unique lines
+#### Sort/show unique lines
 ``` 
 sort -u 	
 ```	
 
-### Count lines w/ "str" 
+#### Count lines w/ "str" 
 ```
 grep -c "str" file 	
 ```	
 
-### Create .tar from files 
+#### Create .tar from files 
 ```
 tar cf file.tar files 	
 ```	
 
-### Extract .tar 
+#### Extract .tar 
 ```
 tar xf file.tar 	
 ```	
 
-### Create .tar.gz 
+#### Create .tar.gz 
 ```
 tar czf file.tar.gz files 	
 ```	
 
-### Extract .tar.gz
+#### Extract .tar.gz
 ``` 
 tar xzf file.tar.gz 	
 ```	
 
-### Create .tar.bz2 
+#### Create .tar.bz2 
 ```
 tar cjf file.tar.bz2 files	
 ``` 	
 
-### Extract .tar.bz2 
+#### Extract .tar.bz2 
 ```
 tar xjf file.tar.bz2 	
 ```	
 
-### Compress/rename file 
+#### Compress/rename file 
 ```
 gzip <file> 	
 ```	
 
-### Decompress file.gz 
+#### Decompress file.gz 
 ```
 gzip -d file.gz 	
 ```	
 
-### UPX packs orig.exe 
+#### UPX packs orig.exe 
 ```
 upx -9 -o out.exe orig.exe 	
 ```	
 
-### Create zip 
+#### Create zip 
 ```
 zip -r <zipname.zip> \Directory\* 	
 ```	
 
-### Cut block 1K-3K from file 
+#### Cut block 1K-3K from file 
 ```
 dd skip=1000 count=2000 bs=8 if=file of=file 	
 ```	
 
-### Split file into 9K chunks 
+#### Split file into 9K chunks 
 ```
 split -b 9K \ file prefix 	
 ```	
 
-### Win compatible txt file 
+#### Win compatible txt file 
 ```
 awk 'sub("$"."\r")' unix.txt > win.txt 	
 ```
 
-### Find PDF files 
+#### Find PDF files 
 ```
 find -i -name <file> -type *.pdf 	
 ```	
 
-### Search for setuid files 
+#### Search for setuid files 
 ```
 find / -perm -4000 -o -perm -2000 -exec ls -ldb {} \; 		
 ```
 
-### Convert to *nix format 
+#### Convert to *nix format 
 ```
 dos2unix <file> 		
 ```
 
-### Determine file type/info 
+#### Determine file type/info 
 ```
 file <file> 		
 ```
 
-### Set/Unset immutable bit
+#### Set/Unset immutable bit
 ```
 chattr (+/-)i <file> 		
-```
-
-
+```  
+  
+  
 ## **Linux Misc Commands**
 
-### Disable history logging 
+#### Disable history logging 
 ```
 unset HISTFILE	
 ``` 	
 
-### Record remote mic 
+#### Record remote mic 
 ```
 ssh user@<ip> arecord - | aplay -	
 ```	
 
-### Compile C,C++ 
+#### Compile C,C++ 
 ```
 gcc -o outfile myfile.c	
 ``` 	
 
-### Reboot (0 = shutdown) 
+#### Reboot (0 = shutdown) 
 ```
 init 6	
 ``` 	
 
-### List of log files
+#### List of log files
 ``` 
 cat /etc/*syslog*.conf | grep -v "^#'"	
 ```	
 
-### Strip links in url.com 
+#### Strip links in url.com 
 ```
 grep 'href=' file | cut -d"/" -f3 | grep <url> |sort -u	
 ``` 	
 
-### Make random 3MB file
+#### Make random 3MB file
 ```
 dd if=/dev/urandom of=<file> bs=3145728 count=100	
-```	
-
-
+```  
+  
+  
 ## **Linux "Cover Your Tracks" Commands**
 
-### Clear auth.log file 
+#### Clear auth.log file 
 ```
 echo "" /var/log/auth.log 
 ```	
 
-### Clear current user bash history 
+#### Clear current user bash history 
 ```
 echo "" -/.bash history 
 ```	
 
-### Delete .bash_history file 
+#### Delete .bash_history file 
 ```
 rm ~/.bash histor/ -rf
 ``` 	
 
-### Clear current session history 
+#### Clear current session history 
 ```
 history -c 
 ```	
 
-### Set history max lines to 0 
+#### Set history max lines to 0 
 ```
 export HISTFILESIZE=O 
 ```	
 
-### Set histroy max commands to 0 
+#### Set histroy max commands to 0 
 ```
 export HISTSIZE=O 
 ```	
 
-### Disable history logging (need to logout to take effect) 
+#### Disable history logging (need to logout to take effect) 
 ```
 unset HISTFILE 	
 ```
 
-### Kills current session 
+#### Kills current session 
 ```
 kill -9 $$ 
 ```	
 
-### Perrnanently send all bash history commands to /dev/null
+#### Perrnanently send all bash history commands to /dev/null
 ```
 ln /dev/null ~/.bash_history -sf
-```	
-
-
-
+```  
+  
+  
+  
 ## **Linux File System Structure**
 
-### User binaries 
+#### User binaries 
 ```
 /bin 
 ```	
 
-### Boot-up related files 
+#### Boot-up related files 
 ```
 /boot 
 ```	
 
-### Interface for system devices 
+#### Interface for system devices 
 ```
 /dev 
 ```	
 
-### System configuration files 
+#### System configuration files 
 ```
 /etc 
 ```	
 
-### Base directory for user files
+#### Base directory for user files
 ``` 
 /home 	
 ```
 
-### Critical software libraries 
+#### Critical software libraries 
 ```
 /lib 	
 ```
 
-### Third party software
+#### Third party software
 ```
 /opt 
 ```	
 
-### System and running programs 
+#### System and running programs 
 ```
 /proc 	
 ```
 
-### Home directory of root user 
+#### Home directory of root user 
 ```
 /root 	
 ```
 
-### System administrator binaries 
+#### System administrator binaries 
 ```
 /sbin 	
 ```
 
-### Temporary files  
+#### Temporary files  
 ```
 /tmp 
 ```	
 
-### Less critical files 
+#### Less critical files 
 ``` 
 /usr 
 ```	
 
-### Variable System files 
+#### Variable System files 
 ```
 /var 
-```
+``` 
+  
+  
+## **Linux Files**
 
-## <b> Linux Files </b>
-
-### Local users' hashes 
+#### Local users' hashes 
 ```
 /etc/shadow 
 ```	
 
-### Local users 
+#### Local users 
 ```
 /etc/passwd 
 ```	
 
-### Local groups 
+#### Local groups 
 ```
 /etc/group 
 ```	
 
-### Startup services 
+#### Startup services 
 ```
 /etc/rc.d 
 ```	
 
-### Service 
+#### Service 
 ```
 /etc/init.d 
 ```	
 
-### Known hostnames and IPs 
+#### Known hostnames and IPs 
 ```
 /etc/hosts 
 ```	
 
-### Full hostname with domain 
+#### Full hostname with domain 
 ```
 /etc/HOSTNAME 
 ```	
 
-### Network configuration 
+#### Network configuration 
 ```
 /etc/network/interfaces 
 ```	
 
-### System environment variables 
+#### System environment variables 
 ```
 /etc/profile 	
 ```
 
-### Ubuntu sources list 
+#### Ubuntu sources list 
 ```
 /etc/apt/sources.list 
 ```	
 
-### Nameserver configuration 
+#### Nameserver configuration 
 ```
 /etc/resolv.conf 
 ```	
 
-### Bash history (also /root/) 
+#### Bash history (also /root/) 
 ```
 /home/<user>/.bash history
 ```	
 
-### Vendor-MAC lookup 
+#### Vendor-MAC lookup 
 ```
 /usr/share/wireshark/manuf 
 ```	
 
-### SSH keystore 
+#### SSH keystore 
 ```
 ~/.ssh/ 
 ```	
 
-### System log files (most Linux) 
+#### System log files (most Linux) 
 ```
 /var/log 
 ```	
 
-### System log files (Unix) 
+#### System log files (Unix) 
 ```
 /var/adm 
 ```	
 
-### List cron files 
+#### List cron files 
 ```
 /var/spool/cron 
 ```	
 
-### Apache connection log 
+#### Apache connection log 
 ```
 /var/log/apache/access.log 
 ```	
 
-### Static file system info
+#### Static file system info
 ```
 /etc/fstab 	
 ```
