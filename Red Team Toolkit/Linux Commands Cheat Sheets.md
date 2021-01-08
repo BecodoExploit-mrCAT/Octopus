@@ -1,7 +1,7 @@
-# <b> *NIX COMMANDS </b>
+# ***NIX COMMANDS**
 
 
-## <b>Linux Network Commands</b>	
+## **Linux Network Commands**	
 
 ### Network connections
 ```
@@ -135,7 +135,9 @@ echo "nameserver x.x.x.x" >> /etc/resolv.conf
 ```
 
 
-## <b> LINUX SYSTEM INFO </b> 	
+
+
+## **LINUX SYSTEM INFO** 	
 
 ### Get hostname for <ip> 
 ```
@@ -248,7 +250,9 @@ chmod 750 <tcsh/csh/ksh>
 ```	
 
 
-## <b> Linux Utility Commands </b>
+
+
+## **Linux Utility Commands**
 
 ### Grab url 
 ```
@@ -306,7 +310,9 @@ history
 ```	
 
 
-## <b>Linux File Commands</b>
+
+
+## **Linux File Commands**
 
 ### Compare files 
 ```
@@ -459,7 +465,7 @@ chattr (+/-)i <file>
 ```
 
 
-## <b> Linux Misc Commands </b>
+## **Linux Misc Commands**
 
 ### Disable history logging 
 ```
@@ -497,7 +503,7 @@ dd if=/dev/urandom of=<file> bs=3145728 count=100
 ```	
 
 
-## <b>> Linux "Cover Your Tracks" Commands </b>
+## **Linux "Cover Your Tracks" Commands**
 
 ### Clear auth.log file 
 ```
@@ -546,7 +552,7 @@ ln /dev/null ~/.bash_history -sf
 
 
 
-# <b> Linux File System Structure </b>
+## **Linux File System Structure**
 
 ### User binaries 
 ```
