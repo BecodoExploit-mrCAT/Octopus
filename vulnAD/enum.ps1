@@ -291,7 +291,7 @@ Get-NetForestTrust
 #Power View
 Get-NetForestTrust –Forest batata.corp
 #AD module
-Get-ADTrust -Filter 'msDS-TrustForestTrustInfo -ne "$null"
+Get-ADTrust -Filter msDS-TrustForestTrustInfo -ne "$null"
 
 #      Find all machines on the current domain where the current user has local admin access 
 
